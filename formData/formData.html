@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 常见formData实例对象 
+        const fd = new FormData();
+        // 追加数据
+        fd.append('username','admin');
+        // 读取数据
+        const username = fd.get('username');
+        // console.log(username);
+        // 删除数据
+        fd.delete('username');
+        // console.log(fd.get('username'));
+
+
+        const obj = {
+            id:1,
+            catename:'分类名称',
+            img:'./imgs/1.jpg',
+            status:1,
+            pid:0
+        }
+        // 将对象转换成formData
+        for(let key in obj){ 
+            fd.append(key,obj[key]);
+        }
+        console.log(fd.get('img'));
+    </script>
+</body>
+</html>
